@@ -1,0 +1,54 @@
+/**
+ * @file
+ * CSS file for the module.
+ */
+
+.demo-card-wide.mdl-card {
+	width: 100%;
+}
+
+.demo-card-wide > .mdl-card__title {
+	color: #fff;
+	height: 276px;
+	background: url('../img/bg.jpg') center / cover;
+}
+
+.demo-card-wide > .mdl-card__menu a {
+	color: #fff;
+	border: none;
+}
+
+.demo-card-wide > .mdl-card__menu a:hover {
+	border: none;
+}
+ 
+.demo-card-wide > .mdl-card__menu {
+	color: #fff;
+}
+
+.mdl-card__supporting-text i {
+	font-size: 0.85em;
+	vertical-align: middle;
+}
+
+.mdl-card__title-text {
+	position: relative;
+	overflow: visible;
+}
+
+.mdl-card__title-text::after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 50%;
+	margin-top: -7.5px;
+	right: -20%;
+	border-radius: 50%;
+	width: 15px;
+	height: 15px;
+	background-color: red;
+}
+
+.booking-confirmed .mdl-card__title-text::after {
+	background-color: lime;
+}

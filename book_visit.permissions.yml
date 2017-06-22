@@ -1,0 +1,4 @@
+manage booking:
+  title: 'Bypass booking access control'
+  description: 'Bypass access control when accessing bookings.'
+  restrict access: TRUE

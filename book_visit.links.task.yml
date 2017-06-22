@@ -1,0 +1,4 @@
+book_visit.admin:
+  title: Bookings
+  route_name: book_visit.list
+  base_route: system.admin_content

@@ -1,0 +1,6 @@
+name: Book Visit
+type: module
+description: "Booking your visit"
+package: Custom
+core: 8.x
+configure: book_visit.settings

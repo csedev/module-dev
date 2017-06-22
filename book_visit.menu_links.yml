@@ -1,0 +1,11 @@
+book_visit.admin:
+  title: Bookings
+  route_name: book_visit.list
+  parent: system.admin_content
+  description: 'List and moderate site bookings and the booking approval queue.'
+
+book_visit.admin_settings:
+  title: 'Booking'
+  route_name: book_visit.settings
+  parent: system.admin_config_system
+  description: 'Configure Exibition Booking.'

@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.exibition
+  module:
+    - text
+id: node.exibition.body
+field_name: body
+entity_type: node
+bundle: exibition
+label: Description
+description: 'More information about the exibition.'
+required: true
+translatable: false
+default_value: { }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

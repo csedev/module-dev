@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - book_visit
+name: 'Exibition'
+type: exibition
+description: 'Exibition Content type'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

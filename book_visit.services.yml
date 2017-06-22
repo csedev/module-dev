@@ -1,0 +1,5 @@
+services:
+  book_visit.booking_storage:
+    class: Drupal\book_visit\Service\BookingStorage
+    arguments:
+      - '@database'

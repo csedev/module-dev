@@ -1,0 +1,25 @@
+book_visit:
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/script.js: {}
+  dependencies:
+    - core/jquery
+    - book_visit/book_visit.material
+
+book_visit.material:
+  version: 1.2.1
+  css:
+    component:
+      //code.getmdl.io/1.2.1/material.indigo-pink.min.css: { type: external, minified: true }
+  js:
+    //code.getmdl.io/1.2.1/material.min.js: { type: external, minified: true }
+  dependencies:
+    - book_visit/book_visit.material.icons
+
+book_visit.material.icons:
+  css:
+    base:
+      //fonts.googleapis.com/icon?family=Material+Icons:: { type: external, minified: false }
+

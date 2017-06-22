@@ -1,0 +1,40 @@
+<?php 
+
+/**
+ * @file
+ * Booking system that lets administrators moderate exibition bookings.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function book_visit_theme() {
+  return array(
+    'booking' => array(
+      'variables' => array('content' => NULL),
+      'file' => 'book_visit.theme.inc',
+    ),
+  );
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function book_visit_node_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
+	if ($entity->getType() == 'exibition' && $view_mode == 'full') {
+		$manage_booking = \Drupal::currentUser()->hasPermission('manage booking');
+		
+		if ($manage_booking) {
+			$bookingStorage = \Drupal::service('book_visit.booking_storage');
+			$pending = $bookingStorage->getPendingBookings($entity->id());
+
+			if ($pending) {
+				drupal_set_message(\Drupal::translation()->formatPlural(
+					$pending,
+					'There is currently one pending booking request for this exbibition',
+					'There are currently @count pending booking requests for this exbibition'
+				));
+			}
+		}
+	}
+}

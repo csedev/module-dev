@@ -1,0 +1,44 @@
+book_visit.list:
+  path: /admin/content/bookings
+  defaults:
+    _controller: Drupal\book_visit\Controller\BookController::listAction
+    _title: Bookings
+  requirements:
+    _permission: 'manage booking'
+
+book_visit.add:
+  path: /bookings/add
+  defaults:
+    _form: Drupal\book_visit\Form\BookForm
+    _title: 'Book Exhibition'
+  requirements:
+    _permission: 'access content'
+
+book_visit.settings:
+  path: /admin/config/system/bookings
+  defaults:
+    _form: Drupal\book_visit\Form\SettingsForm
+    _title: 'Booking Settings'
+  requirements:
+    _permission: 'manage booking'
+
+book_visit.show:
+  path: /booking/{booking_id}
+  defaults:
+    _controller: Drupal\book_visit\Controller\BookController::showAction
+  requirements:
+    _permission: 'manage booking'
+
+book_visit.cancel:
+  path: /booking/{booking_id}/cancel
+  defaults:
+    _controller: Drupal\book_visit\Controller\BookController::cancelAction
+  requirements:
+    _permission: 'manage booking'
+
+book_visit.confirm:
+  path: /booking/{booking_id}/confirm
+  defaults:
+    _controller: Drupal\book_visit\Controller\BookController::confirmAction
+  requirements:
+    _permission: 'manage booking'

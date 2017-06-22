@@ -1,0 +1,12 @@
+table.bookings:
+  random_bookings{0..99}:
+    entity_id: <numberBetween(62, 71)>
+    first_name: <firstName()>
+    last_name: <lastName()>
+    email (unique): <email()>
+    lan: en
+    number_of_participants: '<numberBetween(1, 30)>'
+    date: '<date()>'
+    notes: <sentence()>
+    status: '<boolean(75)>'
+    created: '<dateTimeBetween("-200 days", "now")>'

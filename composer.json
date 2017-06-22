@@ -1,0 +1,15 @@
+{
+	"name": "drupal/book_visit",
+	"description": "Booking your visits.",
+	"type": "drupal-module",
+	"authors": [
+	  {
+	    "name": "Tolu Laleye",
+	    "email": "tolu.laleye@opin.ca",
+	    "role": "Maintainer"
+	  }
+	],
+  "require-dev": {
+    "linkorb/haigha": "~1.0"
+  }
+}

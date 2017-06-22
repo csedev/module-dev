@@ -1,0 +1,6 @@
+book_visit.add:
+  route_name: book_visit.add
+  title: 'Add booking'
+  appears_on:
+    - 'book_visit.list'
+

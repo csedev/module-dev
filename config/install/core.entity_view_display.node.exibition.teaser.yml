@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.exibition.body
+    - node.type.exibition
+  module:
+    - text
+    - user
+id: node.exibition.teaser
+targetEntityType: node
+bundle: exibition
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 100
+    settings:
+      trim_length: 600
+    third_party_settings: { }
+  links:
+    weight: 101
+hidden: { }

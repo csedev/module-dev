@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.exibition.body
+    - node.type.exibition
+  module:
+    - text
+    - user
+id: node.exibition.default
+targetEntityType: node
+bundle: exibition
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_textarea_with_summary
+    weight: 100
+    settings: { }
+    third_party_settings: { }
+  links:
+    weight: 101
+hidden: { }

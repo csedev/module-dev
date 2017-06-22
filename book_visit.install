@@ -1,0 +1,98 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function book_visit_schema() {
+  $schema = array();
+
+  $schema['bookings'] = array(
+    'description' => 'The base table for bookings.',
+    'fields' => array(
+      'id' => array(
+        'description' => 'The primary identifier for the booking.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'entity_id' => array(
+        'description' => 'Exibition Node ID',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+      'first_name' => array(
+        'description' => 'The first name of the group leader.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'last_name' => array(
+        'description' => 'The last name of the group leader.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'email' => array(
+        'description' => 'Email Address.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'phone_number' => array(
+        'description' => 'Phone Number.',
+        'type' => 'varchar',
+        'length' => 255,
+      ),
+      'lan' => array(
+        'description' => 'Language preference.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+      ),
+      'date' => array(
+        'description' => 'Date of Visit.',
+        'type' => 'datetime',
+        'mysql_type' => 'datetime',
+        'not null' => TRUE,
+      ),
+      'number_of_participants' => array(
+        'description' => 'Number of participants',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+      'notes' => array(
+        'description' => 'Additional notes.',
+        'type' => 'text',
+      ),
+      'status' => array(
+        'description' => 'Status of the booking.',
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+      'created' => array(
+        'description' => 'The Unix timestamp when the booking was created.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+    'primary key' => array('id'),
+  );
+
+  return $schema;
+}
+
+/**
+ * Add newcol field to {bookings} table.
+ */
+function book_visit_update_7100() {
+  // $spec = array(
+  //   'description' => 'Activity.',
+  //   'type' => 'int',
+  //   'not null' => TRUE,
+  // );
+  // db_add_field('booking', 'activity', $spec);
+}

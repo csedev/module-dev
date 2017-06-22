@@ -1,0 +1,92 @@
+{#
+/**
+ * @file
+ * Default theme implementation to present a booking item
+ * @see template_preprocess_booking()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{%
+  set classes = [
+    'demo-card-wide',
+    'mdl-card',
+    'mdl-shadow--2dp',
+    'booking',
+    content.status ? 'booking-confirmed',
+  ]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+  <div class="mdl-card__title">
+    {{ title_prefix }}
+      <h2 class="mdl-card__title-text">
+        {{ title }}
+      </h2>
+    {{ title_suffix }}
+  </div>
+  
+  <div class="mdl-card__supporting-text">
+    <div>
+      <span>
+        <i class="material-icons">schedule</i> 
+        {{ content.created|date("d/m/Y") }}
+      </span>
+      <hr>
+    </div>
+
+    <div>
+      <span class="field__label">Exibition:</span>
+      <p>{{ content.entity_id }}</p>
+    </div>
+
+    <div>
+      <span class="field__label">Email:</span>
+      <p>{{ content.email }}</p>
+    </div>
+
+    <div>
+      <span class="field__label">Phone:</span>
+      <p>{{ content.phone_number }}</p>
+    </div>
+
+    <div>
+      <span class="field__label">Notes:</span>
+      <p>{{ content.notes }}</p>
+    </div>
+
+    <div>
+      <span class="field__label">Preferred language:</span>
+      <p>{{ content.lan }}</p>
+    </div>
+
+    <div>
+      <span class="field__label">Date of visit:</span>
+      <p>{{ content.date|date(l , F, d, o) }}</p>
+    </div>
+
+    <div>
+      <span class="field__label">Number of participants:</span>
+      <p>{{ content.number_of_participants }}</p>
+    </div>
+  </div>
+
+  <div class="mdl-card__menu">
+    <a href="{{ path('book_visit.cancel', {'booking_id': content.id}) }}" title="cancel">
+      <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+        <i class="material-icons">cancel</i>
+      </button>
+    </a>
+
+    {% if not content.status %}
+      <a href="{{ path('book_visit.confirm', {'booking_id': content.id}) }}" title="confirm">
+        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+          <i class="material-icons">check_circle</i>
+        </button>
+      </a>
+    {% endif %}
+  </div>
+</div>
+
+
